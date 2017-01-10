@@ -1,0 +1,49 @@
+#!/usr/bin/python
+# Copyright (c) 2016 Dell Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+#
+# THIS CODE IS PROVIDED ON AN  *AS IS* BASIS, WITHOUT WARRANTIES OR
+# CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT
+# LIMITATION (ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS
+# FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
+#
+# See the Apache Version 2.0 License for specific language governing
+# permissions and limitations under the License.
+
+""" This script provides the means to tweak the SDI DB in VM Simulator """
+
+import sys
+import os
+import signal
+import sdi_vm_common as common
+import sdi_vm_cmdline as cmdline
+
+if __name__ == '__main__':
+
+    # Must be root to update sql vm db
+    if os.geteuid() != 0:
+        sys.exit('\n     Error must be root to update VM database\n')
+
+    # Trap ^C, ^Z, ^\ keystrokes
+    signal.signal(signal.SIGINT, common.sigint_handler)
+    signal.signal(signal.SIGTSTP, common.sigint_handler)
+    signal.signal(signal.SIGQUIT, common.sigint_handler)
+
+    #initialization
+    common.init_script()
+
+    print '\n  Media:'
+    # Build tables of resource handles
+    common.bld_port_tbl()
+    common.bld_fantray_tbl()
+    common.bld_psu_tbl()
+    common.bld_thermal_tbl()
+    print '\n'
+
+    cmdline.enable_cmdline()
+
+    #exit process
+    common.exit_script()

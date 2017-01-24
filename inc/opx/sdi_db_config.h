@@ -14,7 +14,7 @@
 #define SDI_DB_BASE_ENV     "DN_SDI_DB_BASE_DIR"
 
 /** Default base path for SDI DB related files **/
-#define SDI_DB_BASE_DEFAULT "/etc/opt/dell/os10/sdi"
+#define SDI_DB_BASE_DEFAULT "/etc/opx/sdi"
 
 /** Name of the database **/
 #define SDI_DB_NAME_DEFAULT "vm.db"

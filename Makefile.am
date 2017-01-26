@@ -17,6 +17,7 @@ lib_LTLIBRARIES += libopx_sdi_sys.la
 
 libopx_sdi_sys_la_SOURCES =  src/sdi_vm_entity.c \
                 src/sdi_vm_media.c \
+                src/sdi_vm_nvram.c \
                 src/sdi_vm_sys.c \
                 src/sdi_vm_fan.c \
                 src/sdi_vm_led.c \

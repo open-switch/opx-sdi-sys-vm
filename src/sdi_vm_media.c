@@ -181,27 +181,6 @@ t_std_error sdi_media_speed_get(sdi_resource_hdl_t resource_hdl, sdi_media_speed
 }
 
 /*
- * Check whether the specified media resource is dell qualified.
- */
-t_std_error sdi_media_is_dell_qualified(sdi_resource_hdl_t resource_hdl, bool *dell_qualified)
-{
-    int db_qualified_value;
-    t_std_error rc;
-
-    STD_ASSERT(dell_qualified != NULL);
-
-    rc = sdi_db_int_field_get(sdi_get_db_handle(), resource_hdl, TABLE_MEDIA,
-                              MEDIA_DELL_QUALIFIED, &db_qualified_value);
-
-    if (rc != STD_ERR_OK) {
-        return rc;
-    }
-
-    *dell_qualified = (bool)db_qualified_value;
-    return STD_ERR_OK;
-}
-
-/*
  * Read the parameter value from the specific media
  */
 t_std_error sdi_media_parameter_get(sdi_resource_hdl_t resource_hdl,
@@ -259,19 +238,6 @@ t_std_error sdi_media_transceiver_code_get(sdi_resource_hdl_t resource_hdl,
     return sdi_db_bin_field_get(sdi_get_db_handle(), resource_hdl,
                                 TABLE_MEDIA, MEDIA_TRANSCEIVER_CODE,
                                 (uint8_t *)code, &len);
-}
-
-/*
- * Get the Dell product information
- */
-t_std_error sdi_media_dell_product_info_get(sdi_resource_hdl_t resource_hdl,
-                                            sdi_media_dell_product_info_t *info)
-{
-    uint_t size = sizeof(sdi_media_dell_product_info_t);
-    STD_ASSERT(info != NULL);
-
-    return sdi_db_bin_field_get(sdi_get_db_handle(), resource_hdl, TABLE_MEDIA,
-                                MEDIA_DELL_PROD_INFO, (uint8_t *)info, &size);
 }
 
 /*
@@ -494,3 +460,34 @@ t_std_error sdi_media_cdr_status_get (sdi_resource_hdl_t resource_hdl,
     *status = true;
     return STD_ERR_OK;
 }
+
+/*
+ * Api to get phy link status .
+ *
+ */
+t_std_error sdi_media_phy_link_status_get (sdi_resource_hdl_t resource_hdl, uint_t channel,
+                                           sdi_media_type_t type, bool *status)
+{
+    *status = true;
+    return STD_ERR_OK;
+}
+
+/*
+ * Api to control media phy and MAC interfaces power down enable/disable .
+ */
+t_std_error sdi_media_phy_power_down_enable (sdi_resource_hdl_t resource_hdl, uint_t channel,
+                                             sdi_media_type_t type, bool enable)
+{
+    return STD_ERR_OK;
+}
+
+/*
+ * Api to enable/disable Fiber/Serdes transmitter and receiver .
+ */
+t_std_error sdi_media_phy_serdes_control (sdi_resource_hdl_t resource_hdl, uint_t channel,
+                                          sdi_media_type_t type, bool enable)
+{
+    return STD_ERR_OK;
+}
+
+

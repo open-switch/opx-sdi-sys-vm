@@ -125,3 +125,25 @@ t_std_error sdi_digital_display_led_off(sdi_resource_hdl_t led_hdl)
 {
     return sdi_digital_display_led_state(led_hdl, 0);
 }
+
+/*
+ * Get the digital display LED power state
+ */
+t_std_error sdi_digital_display_led_get_state (sdi_resource_hdl_t led_hdl, bool *state)
+{
+    int temp=0;
+    t_std_error rc = sdi_db_int_field_get(sdi_get_db_handle(), led_hdl,
+                            TABLE_LED_DIGIT, DIGIT_LED_STATE, &temp);
+    *state = (bool)temp;
+    return rc;
+}
+
+/*
+ * Get the value on the digital display
+ */
+t_std_error sdi_digital_display_led_get (sdi_resource_hdl_t led_hdl,
+            char *display_string, size_t buf_size)
+{
+    return sdi_db_bin_field_get(sdi_get_db_handle(), led_hdl,
+                    TABLE_LED_DIGIT, DIGIT_LED_DISPLAY, (uint8_t*)display_string, (uint_t*)&buf_size);
+}

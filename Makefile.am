@@ -16,14 +16,16 @@ libopx_sdi_db_la_LIBADD = -lopx_db_sql
 lib_LTLIBRARIES += libopx_sdi_sys.la
 
 libopx_sdi_sys_la_SOURCES = \
-	src/sdi_db_ops.c \
-	src/sdi_vm_entity.c \
-	src/sdi_vm_fan.c \
 	src/sdi_vm_led.c \
-	src/sdi_vm_media.c \
-	src/sdi_vm_nvram.c \
+	src/sdi_db_ops.c \
+	src/sdi_vm_thermal.c \
+	src/sdi_vm_entity.c \
 	src/sdi_vm_sys.c \
-	src/sdi_vm_thermal.c
+	src/sdi_vm_host_system.c \
+	src/sdi_vm_media.c \
+	src/sdi_vm_fan.c \
+	src/sdi_vm_comm_dev.c \
+	src/sdi_vm_nvram.c
 
 libopx_sdi_sys_la_CPPFLAGS = -I$(top_srcdir)/inc/opx  -I$(includedir)/opx  -I$(top_srcdir)/inc/opx/private
 libopx_sdi_sys_la_LDFLAGS = -version-info 1:1:0

@@ -446,7 +446,7 @@ def parse_arguments(cmd_args):
 
 def enable_cmdline():
     """Enables accepting commandline arguments
-       for the os10-vm-plat-events script"""
+       for the opx-vm-plat-events script"""
 
     parser = argparse.ArgumentParser()
 

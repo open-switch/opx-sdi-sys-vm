@@ -14,10 +14,10 @@
 # permissions and limitations under the License.
 
 # Constants
-SDI_DB_BASE_DEFAULT     = '/etc/opt/dell/os10/sdi/'
+SDI_DB_BASE_DEFAULT     = '/etc/opx/sdi/'
 SDI_DB_NAME_DEFAULT     = 'vm.db'
 SDI_DB_QUERY_ALL        = ''                 # No condition filtering
-SDI_DB_SDI_LIB_DEFAULT  = '/opt/dell/os10/lib/'
+SDI_DB_SDI_LIB_DEFAULT  = '/usr/lib/x86_64-linux-gnu/'
 SDI_DB_SDI_LIB_NAME     = 'libsdi_db.so'     # sdi_db_ops semaphore library
 
 # SDI DB table identifiers

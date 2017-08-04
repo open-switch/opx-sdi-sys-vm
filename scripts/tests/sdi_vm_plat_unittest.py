@@ -54,8 +54,8 @@ THERMAL_CLEAR_FAULT  = '2'
 THERMAL_SET_TEMP     = '3'
 THERMAL_LIST_TEMP    = '4'
 
-#os10-vm-plat-event script name
-OS10_VM_PLAT_EVENT = 'os10-vm-plat-event'
+#opx-vm-plat-event script name
+OPX_VM_PLAT_EVENT = 'opx-vm-plat-event'
 
 
 
@@ -77,7 +77,7 @@ insert_optic         = {
     'interactive' : [MAIN_MENU_OPTICS_OPTION, OPTIC_INSERT, port, optic_type,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_OPTIC_ACTION,
                      cmdline.PORT_ID, port,
                      cmdline.OPTIC_TYPE, optic_type],
@@ -106,7 +106,7 @@ remove_optic         = {
     'interactive' : [MAIN_MENU_OPTICS_OPTION, OPTIC_REMOVE, port,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.REMOVE_OPTIC_ACTION,
                      cmdline.PORT_ID, port],
 
@@ -134,7 +134,7 @@ insert_fantray       = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_INSERT, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_FANTRAY_ACTION,
                      cmdline.SLOT, slot],
 
@@ -162,7 +162,7 @@ remove_fantray       = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_REMOVE, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                     cmdline.ACTION, cmdline.REMOVE_FANTRAY_ACTION,
                     cmdline.SLOT, slot],
 
@@ -190,7 +190,7 @@ insert_fantray_fault = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_FAULT_INSERT, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_FANTRAY_FAULT_ACTION,
                      cmdline.SLOT, slot],
 
@@ -218,7 +218,7 @@ clear_fantray_fault  = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_FAULT_CLEAR, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.CLEAR_FANTRAY_FAULT_ACTION,
                      cmdline.SLOT, slot],
 
@@ -256,7 +256,7 @@ insert_fantray_fan_fault = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_FAN_FAULT_INSERT, slot,
                      fan_id, MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_FANTRAY_FAN_FAULT_ACTION,
                      cmdline.SLOT, slot,
                      cmdline.FAN_ID, fan_id],
@@ -296,7 +296,7 @@ clear_fantray_fan_fault = {
     'interactive' : [MAIN_MENU_FANTRAY_OPTION, FANTRAY_FAN_FAULT_CLEAR, slot,
                      fan_id, MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.CLEAR_FANTRAY_FAN_FAULT_ACTION,
                      cmdline.SLOT, slot,
                      cmdline.FAN_ID, fan_id],
@@ -325,7 +325,7 @@ insert_psu       = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_INSERT, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_PSU_ACTION,
                      cmdline.SLOT, slot],
 
@@ -353,7 +353,7 @@ remove_psu       = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_REMOVE, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.REMOVE_PSU_ACTION,
                      cmdline.SLOT, slot],
 
@@ -381,7 +381,7 @@ insert_psu_fault = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_FAULT_INSERT, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_PSU_FAULT_ACTION,
                      cmdline.SLOT, slot],
 
@@ -409,7 +409,7 @@ clear_psu_fault  = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_FAULT_CLEAR, slot,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.CLEAR_PSU_FAULT_ACTION,
                      cmdline.SLOT, slot],
 
@@ -447,7 +447,7 @@ insert_psu_fan_fault = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_FAN_FAULT_INSERT, slot,
                      fan_id, MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_PSU_FAN_FAULT_ACTION,
                      cmdline.SLOT, slot,
                      cmdline.FAN_ID, fan_id],
@@ -486,7 +486,7 @@ clear_psu_fan_fault = {
     'interactive' : [MAIN_MENU_PSU_OPTION, PSU_FAN_FAULT_CLEAR, slot,
                      fan_id, MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.CLEAR_PSU_FAN_FAULT_ACTION,
                      cmdline.SLOT, slot,
                      cmdline.FAN_ID, fan_id],
@@ -516,7 +516,7 @@ insert_thermal_fault = {
     'interactive' : [MAIN_MENU_THERMAL_OPTION, THERMAL_INSERT_FAULT,
                      sensor_id, MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.INSERT_TEMP_SENSOR_FAULT_ACTION,
                      '--temp-sensor-id', sensor_id],
 
@@ -545,7 +545,7 @@ clear_thermal_fault = {
     'interactive' : [MAIN_MENU_THERMAL_OPTION, THERMAL_CLEAR_FAULT, sensor_id,
                      MAIN_MENU_QUIT_OPTION],
 
-    'cmdline'     : [OS10_VM_PLAT_EVENT,
+    'cmdline'     : [OPX_VM_PLAT_EVENT,
                      cmdline.ACTION, cmdline.CLEAR_TEMP_SENSOR_FAULT_ACTION,
                      '--temp-sensor-id', sensor_id],
 
@@ -614,7 +614,7 @@ def execute_interactive_test(input_test):
     """Runs the tests in interactive format"""
 
     print "\n Running interactive test case : " + input_test['name']
-    tarpipe = subprocess.Popen([OS10_VM_PLAT_EVENT], stdin=subprocess.PIPE)
+    tarpipe = subprocess.Popen([OPX_VM_PLAT_EVENT], stdin=subprocess.PIPE)
 
     for line in input_test['interactive']:
         tarpipe.stdin.write(line + '\n')

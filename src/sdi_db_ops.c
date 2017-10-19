@@ -1359,6 +1359,7 @@ t_std_error sdi_db_bin_field_get(db_sql_handle_t db_handle,
  * @param[in]   table           Table name
  * @param[in]   field           Field name
  * @param[in]   value           Pointer to the value
+ * @param[in]   len             Length (bytes) of the value
  *
  * @return STD_ERR_OK on success, error code on failure.
  */

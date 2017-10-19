@@ -369,6 +369,7 @@ t_std_error sdi_entity_info_read(sdi_resource_hdl_t res_hdl, sdi_entity_info_t *
     FILE              *fptr;
     sdi_entity_type_t entity_type;
     uint_t            base_mac[6];
+    static bool       is_init = false;
 
     STD_ASSERT(info != NULL);
 
@@ -402,7 +403,7 @@ t_std_error sdi_entity_info_read(sdi_resource_hdl_t res_hdl, sdi_entity_info_t *
 
     sdi_db_get_entity_type(sdi_get_db_handle(), res_hdl, &entity_type);
 
-    if(entity_type == SDI_ENTITY_SYSTEM_BOARD) {
+    if(!is_init && entity_type == SDI_ENTITY_SYSTEM_BOARD) {
         if(NULL != (fptr=fopen("/sys/class/net/eth0/address", "r"))) {      
 
             if (fgets(c, sizeof(c), fptr) == NULL) {
@@ -424,6 +425,13 @@ t_std_error sdi_entity_info_read(sdi_resource_hdl_t res_hdl, sdi_entity_info_t *
             info->base_mac[3] = (uint8_t) base_mac[3];
             info->base_mac[4] = (uint8_t) base_mac[4];
             info->base_mac[5] = (uint8_t) base_mac[5];
+            len = sizeof(info->base_mac);
+            rc = sdi_db_bin_field_set(sdi_get_db_handle(), res_hdl, TABLE_INFO,
+                INFO_BASE_MAC, info->base_mac, len);
+            if (rc != STD_ERR_OK) {
+                return rc;
+            }
+            is_init = true;
             return STD_ERR_OK;
         }
     }
